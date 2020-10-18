@@ -26,6 +26,6 @@ app.get('/',(req,res)=>{res.send('Ola mundo')})
 app.use('/auth',require('./routes/auth'))
 
 //ouvindo porta no servidor
-app.listen(process.env.PORT || 80,()=>{
+app.listen(3000,()=>{
     console.log('Iniciou o servidor')
 })
