@@ -20,7 +20,7 @@ class AuthController{
         })
 
         const user = await UserModel.findOne(req.body)
-
+        
         if(!user){
             res.json({
                 error:true,
@@ -51,7 +51,7 @@ class AuthController{
         })
 
         const data = await http.get(`/players/${encodeURIComponent(req.body.tagName)}`)
-
+        
         res.json({
             data
         })
