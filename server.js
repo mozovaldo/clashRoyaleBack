@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 app.use(cors())
 
+app.get('/',(req,res)=>{res.send('Ola mundo')})
 //configurando rotas
 app.use('/auth',require('./routes/auth'))
 
