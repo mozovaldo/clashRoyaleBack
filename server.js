@@ -21,10 +21,11 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(cors())
 
 app.get('/',(req,res)=>{res.send('Ola mundo')})
+
 //configurando rotas
 app.use('/auth',require('./routes/auth'))
 
 //ouvindo porta no servidor
-app.listen(3333,()=>{
+app.listen(process.env.PORT || 3333,()=>{
     console.log('Iniciou o servidor')
 })
