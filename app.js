@@ -1,9 +1,9 @@
-// require('dotenv').config()
+require('dotenv').config()
 const app = require('express')()
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-
+const helmet = require('helmet')
 //conexao com o database
 mongoose.connect(`mongodb+srv://root:${process.env.PASSWORD_DB}@cluster0.xptfl.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,{useNewUrlParser:true,useUnifiedTopology: true})
 
@@ -19,6 +19,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.use(cors())
+app.use(helmet())
 
 app.get('/',(req,res)=>{res.send('Ola mundo')})
 
